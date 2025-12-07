@@ -163,48 +163,6 @@ console.log(`DCF = $${dcf(cashFlows, 0.08).toFixed(2)}`);
   </script>
 
   <!-- Highlight.js (fallback for the plugin if needed) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js
-      <section>
-        <h2>Thank you</h2>
-        <p>Questions? Reach me at <a href="mailto:25ds1000054@ds.study.iitm.ac.in">25ds1000054@ds.study.iitm.ac.in</a></p>
-        <aside class="notes">
-          Invite questions and next steps: distribution of the PDF and schedule a follow-up technical deep-dive.
-        </aside>
-      </section>
-
-    </div>
-  </div>
-
-  <!-- RevealJS and plugins -->
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/markdown/markdown.esm.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/highlight/highlight.esm.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/notes/notes.esm.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/math/math.esm.js"></script>
-
-  <script>
-    Reveal.initialize({
-      hash: true,
-      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
-      math: {
-        // use KaTeX (bundled with reveal.js plugin) — delimiters below
-        mathjax: null,
-        katex: {
-          // KaTeX options can go here if needed
-        }
-      }
-    });
-
-    // Ensure code highlighting runs on load
-    Reveal.on('ready', function() {
-      document.querySelectorAll('pre code').forEach((block) => {
-        // highlight.js will be triggered by the plugin, but this ensures it runs
-        if (window.hljs) window.hljs.highlightBlock(block);
-      });
-    });
-  </script>
-
-  <!-- Highlight.js (fallback for the plugin if needed) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 </body>
 </html>
