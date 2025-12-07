@@ -1,91 +1,77 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Quarterly Earnings Report</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quarterly Earnings — Interactive Reveal.js Presentation</title>
 
-  <!-- Reveal Core -->
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
 
-  <!-- Highlight Code Theme -->
-  <link rel="stylesheet" href="https://unpkg.com/highlight.js@11.8.0/styles/atom-one-dark.css">
-
-  <style>
-    footer {
-      position: fixed;
-      bottom: 10px;
-      right: 15px;
-      font-size: 12px;
-      opacity: 0.8;
-      color: white;
-    }
-  </style>
 </head>
 <body>
+  <div class="reveal">
+    <div class="slides">
 
-<footer>25ds1000054@ds.study.iitm.ac.in</footer>
+      <section>
+        <h1>Quarterly Earnings Report</h1>
+        <h3>Technical Presentation — Interactive</h3>
+        <p><strong>Email:</strong> 25ds1000054@ds.study.iitm.ac.in</p>
+      </section>
 
-<div class="reveal">
-  <div class="slides">
+      <section data-markdown>
+        <script type="text/template">
+## Highlights (Markdown)
+- Revenue up **Y% YoY**
+- Net income **improved**
+- Strong operational efficiency
+        </script>
+      </section>
 
-    <section>
-      <h1>Quarterly Earnings Report</h1>
-      <h3 class="fragment fade-up">Financial Overview & Key Metrics</h3>
-      <aside class="notes">Intro slide: welcome all stakeholders.</aside>
-    </section>
+      <section>
+        <h2>Strategic Initiatives</h2>
+        <ul>
+          <li class="fragment">Cost Optimization</li>
+          <li class="fragment">Capital Structure Strengthening</li>
+          <li class="fragment">Automation Investments</li>
+        </ul>
+      </section>
 
-    <section data-markdown>
-      <textarea data-template>
-### Revenue Breakdown
-- Q1: **$12.1M**
-- Q2: **$13.4M**
-- Q3: **$16.2M**
-- Q4: **$18.7M**
+      <section>
+        <h2>DCF Calculation (Code)</h2>
+        <pre><code class="language-javascript">function dcf(cf, r) {
+  return cf.reduce((p, c, i) => p + c / Math.pow(1 + r, i + 1), 0);
+}
+console.log(dcf([100,120,140], 0.08));</code></pre>
+      </section>
 
-*Consistent year-round growth*
-      </textarea>
-    </section>
+      <section>
+        <h2>Financial Math</h2>
+        <p class="fragment">\(NPV = \sum_{t=1}^N \frac{CF_t}{(1+r)^t}\)</p>
+        <p class="fragment">\(PV = \frac{CF}{(1+r)^n}\)</p>
+      </section>
 
-    <section>
-      <h2>Financial Formula</h2>
-      <p>Profit Margin</p>
-      <p style="font-size:28px;">
-        $$ PM = \frac{Net\ Income}{Total\ Revenue} \times 100 $$
-      </p>
-      <aside class="notes">Explain margin improved due to reduced operating cost.</aside>
-    </section>
+      <section>
+        <h2>Thanks</h2>
+        <p>For queries: 25ds1000054@ds.study.iitm.ac.in</p>
+      </section>
 
-    <section>
-      <h2>JavaScript Example</h2>
-      <pre><code class="language-javascript">
-const profitMargin = (netIncome, revenue) => (netIncome / revenue) * 100;
-console.log(profitMargin(4200000, 18700000));
-      </code></pre>
-    </section>
-    <section>
-      <h2>Contact Information</h2>
-      <p><strong>Email:</strong> 25ds1000054@ds.study.iitm.ac.in</p>
-      <p class="fragment fade-in">Reach out for financial clarifications.</p>
-      <aside class="notes">Final slide confirms primary contact identity.</aside>
-    </section>
-
+    </div>
   </div>
-</div>
 
-<!-- Core Scripts -->
-<script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
-<script src="https://unpkg.com/reveal.js/plugin/markdown/markdown.js"></script>
-<script src="https://unpkg.com/reveal.js/plugin/highlight/highlight.js"></script>
-<script src="https://unpkg.com/reveal.js/plugin/math/math.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/markdown/markdown.esm.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/highlight/highlight.esm.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/math/math.esm.js"></script>
 
-<script>
-  Reveal.initialize({
-    hash: true,
-    plugins: [ RevealMarkdown, RevealHighlight, RevealMath ]
-  });
-</script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      plugins: [RevealMarkdown, RevealHighlight, RevealMath.KaTeX]
+    });
+  </script>
 
 </body>
 </html>
