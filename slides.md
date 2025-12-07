@@ -1,5 +1,10 @@
 ---
 marp: true
+paginate: true
+theme: default
+backgroundColor: white
+footer: "25ds1000054@ds.study.iitm.ac.in"
+marp: true
 title: Product Documentation Overview
 author: Technical Writer
 theme: custom
