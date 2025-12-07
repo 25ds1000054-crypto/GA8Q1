@@ -1,173 +1,85 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
   <meta charset="utf-8">
+  <title>Quarterly Earnings Report</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quarterly Earnings — Interactive Reveal.js Presentation</title>
 
-  <!-- RevealJS (from CDN) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.css?v=3">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/theme/black.css?v=3" id="theme">
+  <!-- Reveal Core -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/black.css" id="theme">
 
-  <!-- Highlight.js (for code syntax highlighting) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
-
-  <!-- KaTeX (math rendering) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <!-- Highlight Code Theme -->
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js@11.8.0/styles/atom-one-dark.css">
 
   <style>
-    /* Small styling adjustments */
-    .email { font-size: 0.9rem; opacity: 0.85; }
-    pre code { font-size: 0.82rem; }
+    footer {
+      position: fixed;
+      bottom: 10px;
+      right: 15px;
+      font-size: 12px;
+      opacity: 0.8;
+      color: white;
+    }
   </style>
 </head>
 <body>
-  <div class="reveal">
-    <div class="slides">
 
-      <!-- Global footer with required email -->
-      <footer style="position: fixed; bottom: 12px; right: 18px; font-size: 12px; opacity: 0.7;">
-        25ds1000054@ds.study.iitm.ac.in
-      </footer>
+<footer>25ds1000054@ds.study.iitm.ac.in</footer>
 
-      <!-- Title slide (email included) -->
-      <section>
-        <h1>Quarterly Earnings Report</h1>
-        <h3>Technical Presentation — Interactive</h3>
-        <p class="email">Contact: <a href="mailto:25ds1000054@ds.study.iitm.ac.in">25ds1000054@ds.study.iitm.ac.in</a></p>
-        <aside class="notes">
-          Welcome stakeholders — quick intro, objectives, and how we'll navigate the deck.
-        </aside>
-      </section>
+<div class="reveal">
+  <div class="slides">
 
-      <!-- Markdown slide (written in Markdown using data-markdown) -->
-      <section data-markdown>
-        <script type="text/template">
+    <section>
+      <h1>Quarterly Earnings Report</h1>
+      <h3 class="fragment fade-up">Financial Overview & Key Metrics</h3>
+      <aside class="notes">Intro slide: welcome all stakeholders.</aside>
+    </section>
 
-## Highlights (Markdown slide)
+    <section data-markdown>
+      <textarea data-template>
+### Revenue Breakdown
+- Q1: **$12.1M**
+- Q2: **$13.4M**
+- Q3: **$16.2M**
+- Q4: **$18.7M**
 
-- Revenue: **$X.XXB** (YoY +Y%)
-- Net Income: **$Z.ZM** (Margin improved)
-- Key drivers:
-  1. Product A adoption
-  2. Cost optimisation
+*Consistent year-round growth*
+      </textarea>
+    </section>
 
-> Notes: Use this slide as a quick executive summary.
+    <section>
+      <h2>Financial Formula</h2>
+      <p>Profit Margin</p>
+      <p style="font-size:28px;">
+        $$ PM = \frac{Net\ Income}{Total\ Revenue} \times 100 $$
+      </p>
+      <aside class="notes">Explain margin improved due to reduced operating cost.</aside>
+    </section>
 
-        </script>
-        <aside class="notes">
-          Read each bullet slowly — expand on the drivers with one short example each.
-        </aside>
-      </section>
+    <section>
+      <h2>JavaScript Example</h2>
+      <pre><code class="language-javascript">
+const profitMargin = (netIncome, revenue) => (netIncome / revenue) * 100;
+console.log(profitMargin(4200000, 18700000));
+      </code></pre>
+    </section>
 
-      <!-- Fragment animations -->
-      <section>
-        <h2>Key Strategic Initiatives</h2>
-        <ul>
-          <li class="fragment">Optimize cash management</li>
-          <li class="fragment">Invest in high-margin products</li>
-          <li class="fragment">Reduce operating expense by 5%</li>
-        </ul>
-        <aside class="notes">
-          Use fragments (press space) to reveal one-by-one when presenting.
-        </aside>
-      </section>
-
-      <!-- Code sample with syntax highlighting -->
-      <section>
-        <h2>Example: Calculating Discounted Cash Flow (DCF)</h2>
-        <pre><code class="language-javascript">// Simple DCF: present value of cash flows
-function dcf(cashFlows, discountRate) {
-  return cashFlows.reduce((pv, cf, i) => pv + cf / Math.pow(1 + discountRate, i + 1), 0);
-}
-
-const cashFlows = [100, 110, 120, 130];
-console.log(`DCF = $${dcf(cashFlows, 0.08).toFixed(2)}`);
-        </code></pre>
-        <aside class="notes">
-          Walk through the code and highlight assumptions: discount rate, timing, and forecast certainty.
-        </aside>
-      </section>
-
-      <!-- Math equations using KaTeX via Reveal's math plugin -->
-      <section>
-        <h2>Core Financial Formulas</h2>
-        <p class="fragment">Net Present Value (NPV): \(\mathrm{NPV} = \sum_{t=0}^N \dfrac{CF_t}{(1+r)^t}\)</p>
-        <p class="fragment">Present Value of a single cash flow: \(PV = \dfrac{CF}{(1+r)^n}\)</p>
-        <p class="fragment">WACC (simplified): \(WACC = w_e r_e + w_d r_d (1-T_c)\)</p>
-        <aside class="notes">
-          Explain variables and where to source them: market data for r_e, debt schedules for r_d.
-        </aside>
-      </section>
-
-      <!-- Slide with small interactive table-like content and fragments -->
-      <section>
-        <h2>Quarter-over-quarter Snapshot</h2>
-        <p class="fragment">Revenue: <strong>$X.XXB</strong></p>
-        <p class="fragment">Operating Margin: <strong>Y.Y%</strong></p>
-        <p class="fragment">EPS: <strong>$0.XX</strong></p>
-        <aside class="notes">
-          Call out variance drivers and highlight any one-off items.
-        </aside>
-      </section>
-
-      <!-- Publishing instructions slide -->
-      <section>
-        <h2>Publish to GitHub Pages</h2>
-        <ol>
-          <li>Create a GitHub repository (e.g. <code>quarterly-earnings</code>).</li>
-          <li>Push this <code>index.html</code> at the repository root (or into a <code>/docs</code> folder).</li>
-          <li>In GitHub repo settings → Pages, select the branch and folder (root or /docs) and save.</li>
-        </ol>
-        <p class="fragment">After publishing the GitHub Pages URL will look like: <code>https://&lt;GITHUB_USERNAME&gt;.github.io/&lt;REPO&gt;/</code></p>
-        <p class="fragment">To force-refresh cached content for stakeholders, append a cache-busting query parameter to asset or page URLs, for example: <code>?v=1</code>, <code>?v=2</code>, etc. Example: <code>https://&lt;GITHUB_USERNAME&gt;.github.io/&lt;REPO&gt;/?v=2</code></p>
-        <aside class="notes">
-          If you use a repository named <code>&lt;username&gt;.github.io</code> the site will be served at <code>https://&lt;username&gt;.github.io/</code> (no repo segment required). Mention cache-busting to stakeholders when you share updated versions.
-        </aside>
-      </section>
-
-      <!-- Closing slide -->
-      <section>
-        <h2>Thank you</h2>
-        <p>Questions? Reach me at <a href="mailto:25ds1000054@ds.study.iitm.ac.in">25ds1000054@ds.study.iitm.ac.in</a></p>
-        <aside class="notes">
-          Invite questions and next steps: distribution of the PDF and schedule a follow-up technical deep-dive.
-        </aside>
-      </section>
-
-    </div>
   </div>
+</div>
 
-  <!-- RevealJS and plugins -->
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/markdown/markdown.esm.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/highlight/highlight.esm.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/notes/notes.esm.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/math/math.esm.js"></script>
+<!-- Core Scripts -->
+<script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+<script src="https://unpkg.com/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="https://unpkg.com/reveal.js/plugin/highlight/highlight.js"></script>
+<script src="https://unpkg.com/reveal.js/plugin/math/math.js"></script>
 
-  <script>
-    Reveal.initialize({
-      hash: true,
-      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
-      math: {
-        // use KaTeX (bundled with reveal.js plugin) — delimiters below
-        mathjax: null,
-        katex: {
-          // KaTeX options can go here if needed
-        }
-      }
-    });
+<script>
+  Reveal.initialize({
+    hash: true,
+    plugins: [ RevealMarkdown, RevealHighlight, RevealMath ]
+  });
+</script>
 
-    // Ensure code highlighting runs on load
-    Reveal.on('ready', function() {
-      document.querySelectorAll('pre code').forEach((block) => {
-        // highlight.js will be triggered by the plugin, but this ensures it runs
-        if (window.hljs) window.hljs.highlightBlock(block);
-      });
-    });
-  </script>
-
-  <!-- Highlight.js (fallback for the plugin if needed) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 </body>
 </html>
